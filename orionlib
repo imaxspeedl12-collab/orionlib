@@ -446,9 +446,9 @@ end
 
 function OrionLib:MakeWindow(WindowConfig)
 	local FirstTab = true
-	local Minimized = true
+	local Minimized = false
 	local Loaded = false
-	local UIHidden = true
+	local UIHidden = false
 
 	WindowConfig = WindowConfig or {}
 	WindowConfig.Name = WindowConfig.Name or "Orion Library"
@@ -610,7 +610,8 @@ function OrionLib:MakeWindow(WindowConfig)
 		WindowStuff
 	}), "Main")
 
-
+-- 👈 THÊM DÒNG NÀY
+MainWindow.Visible = false
 -- 👈 THÊM ĐOẠN NÀY VÀO NGAY SAU DÒNG TRÊN
 -- TỰ ĐỘNG THU GỌN MENU NGAY SAU KHI TẠO
 task.spawn(function()
