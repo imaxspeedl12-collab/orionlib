@@ -611,7 +611,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	}), "Main")
 
 -- TẠO NÚT TOGGLE THAY CHO MainWindow.Visible = false
-local HideOnStart = false -- false = menu hiện, true = menu ẩn khi mở
+local HideOnStart = true -- false = menu hiện, true = menu ẩn khi mở
 
 -- Tạo nút toggle (nổi trên màn hình)
 local ToggleStartupBtn = Instance.new("TextButton")
