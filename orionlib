@@ -1892,4 +1892,31 @@ function OrionLib:Destroy()
 	Orion:Destroy()
 end
 
+-- Nút bật/tắt ẩn menu
+local ToggleHide = Instance.new("TextButton")
+ToggleHide.Size = UDim2.new(0, 100, 0, 40)
+ToggleHide.Position = UDim2.new(0.5, -50, 0, 50)
+ToggleHide.Text = "Ẩn menu khi mở: BẬT"
+ToggleHide.TextColor3 = Color3.fromRGB(255,255,255)
+ToggleHide.BackgroundColor3 = Color3.fromRGB(30,30,30)
+ToggleHide.Parent = Orion
+
+local HideOnStart = true
+
+ToggleHide.MouseButton1Click:Connect(function()
+    HideOnStart = not HideOnStart
+    MainWindow.Visible = not HideOnStart
+    if HideOnStart then
+        ToggleHide.Text = "Ẩn menu khi mở: BẬT"
+        ToggleHide.BackgroundColor3 = Color3.fromRGB(0,150,0)
+    else
+        ToggleHide.Text = "Ẩn menu khi mở: TẮT"
+        ToggleHide.BackgroundColor3 = Color3.fromRGB(150,0,0)
+    end
+end)
+
+MainWindow.Visible = not HideOnStart
+
+return OrionLib
+
 return OrionLib
