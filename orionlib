@@ -610,7 +610,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		WindowStuff
 	}), "Main")
 
--- NÚT TOGGLE ĐẸP (nút tròn)
+-- NÚT TOGGLE MẮT (áp dụng cho Orion)
 local ToggleBtn = Instance.new("ImageButton")
 ToggleBtn.Size = UDim2.new(0, 45, 0, 45)
 ToggleBtn.Position = UDim2.new(0, 15, 0, 100)
@@ -619,15 +619,18 @@ ToggleBtn.Image = "rbxassetid://7072720870"
 ToggleBtn.ScaleType = Enum.ScaleType.Fit
 ToggleBtn.Parent = Orion
 
-local ToggleCorner = Instance.new("UICorner")
-ToggleCorner.CornerRadius = UDim.new(1, 0)
-ToggleCorner.Parent = ToggleBtn
+-- Bo tròn
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(1, 0)
+corner.Parent = ToggleBtn
 
-local ToggleStroke = Instance.new("UIStroke")
-ToggleStroke.Color = Color3.fromRGB(60, 60, 60)
-ToggleStroke.Thickness = 1.5
-ToggleStroke.Parent = ToggleBtn
+-- Viền
+local stroke = Instance.new("UIStroke")
+stroke.Color = Color3.fromRGB(60, 60, 60)
+stroke.Thickness = 1.5
+stroke.Parent = ToggleBtn
 
+-- Xử lý toggle
 local isHidden = true
 
 ToggleBtn.MouseButton1Click:Connect(function()
@@ -641,6 +644,7 @@ ToggleBtn.MouseButton1Click:Connect(function()
     end
 end)
 
+-- Mặc định menu ẩn
 MainWindow.Visible = false
 
 -- 👈 THÊM ĐOẠN NÀY VÀO NGAY SAU DÒNG TRÊN
