@@ -642,8 +642,8 @@ function OrionLib:MakeWindow(WindowConfig)
 		MobileReopenButton.Visible = true
 		UIHidden = true
 		OrionLib:MakeNotification({
-			Name = "Chao",
-			Content = "Chao Giận",
+			Name = "ChanBao",
+			Content = "Never Give Up",
 			Time = 5
 		})
 		WindowConfig.CloseCallback()
