@@ -610,39 +610,38 @@ function OrionLib:MakeWindow(WindowConfig)
 		WindowStuff
 	}), "Main")
 
--- TẠO NÚT TOGGLE THAY CHO MainWindow.Visible = false
-local HideOnStart = true -- false = menu hiện, true = menu ẩn khi mở
+-- NÚT TOGGLE ĐẸP (nút tròn)
+local ToggleBtn = Instance.new("ImageButton")
+ToggleBtn.Size = UDim2.new(0, 45, 0, 45)
+ToggleBtn.Position = UDim2.new(0, 15, 0, 100)
+ToggleBtn.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+ToggleBtn.Image = "rbxassetid://7072720870"
+ToggleBtn.ScaleType = Enum.ScaleType.Fit
+ToggleBtn.Parent = Orion
 
--- Tạo nút toggle (nổi trên màn hình)
-local ToggleStartupBtn = Instance.new("TextButton")
-ToggleStartupBtn.Size = UDim2.new(0, 120, 0, 35)
-ToggleStartupBtn.Position = UDim2.new(0, 10, 0, 10)
-ToggleStartupBtn.Text = "Menu startup: HIỆN"
-ToggleStartupBtn.TextColor3 = Color3.fromRGB(255,255,255)
-ToggleStartupBtn.BackgroundColor3 = Color3.fromRGB(0,150,0)
-ToggleStartupBtn.Parent = Orion
+local ToggleCorner = Instance.new("UICorner")
+ToggleCorner.CornerRadius = UDim.new(1, 0)
+ToggleCorner.Parent = ToggleBtn
 
--- Bo góc
-local btnCorner = Instance.new("UICorner")
-btnCorner.CornerRadius = UDim.new(0, 6)
-btnCorner.Parent = ToggleStartupBtn
+local ToggleStroke = Instance.new("UIStroke")
+ToggleStroke.Color = Color3.fromRGB(60, 60, 60)
+ToggleStroke.Thickness = 1.5
+ToggleStroke.Parent = ToggleBtn
 
--- Xử lý khi bấm nút
-ToggleStartupBtn.MouseButton1Click:Connect(function()
-    HideOnStart = not HideOnStart
-    if HideOnStart then
-        ToggleStartupBtn.Text = "Menu startup: ẨN"
-        ToggleStartupBtn.BackgroundColor3 = Color3.fromRGB(150,0,0)
+local isHidden = true
+
+ToggleBtn.MouseButton1Click:Connect(function()
+    isHidden = not isHidden
+    if isHidden then
+        ToggleBtn.Image = "rbxassetid://7072720870"
+        MainWindow.Visible = false
     else
-        ToggleStartupBtn.Text = "Menu startup: HIỆN"
-        ToggleStartupBtn.BackgroundColor3 = Color3.fromRGB(0,150,0)
+        ToggleBtn.Image = "rbxassetid://7072719338"
+        MainWindow.Visible = true
     end
-    -- Cập nhật trạng thái menu ngay lập tức
-    MainWindow.Visible = not HideOnStart
 end)
 
--- Áp dụng setting ban đầu
-MainWindow.Visible = not HideOnStart
+MainWindow.Visible = false
 
 -- 👈 THÊM ĐOẠN NÀY VÀO NGAY SAU DÒNG TRÊN
 -- TỰ ĐỘNG THU GỌN MENU NGAY SAU KHI TẠO
