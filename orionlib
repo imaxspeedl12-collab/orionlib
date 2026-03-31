@@ -630,8 +630,9 @@ stroke.Color = Color3.fromRGB(60, 60, 60)
 stroke.Thickness = 1.5
 stroke.Parent = ToggleBtn
 
-local isHidden = true
-MainWindow.Visible = false
+-- ẩn or hiện menu khi bắt đầu script
+local isHidden = false
+MainWindow.Visible = true
 
 ToggleBtn.MouseButton1Click:Connect(function()
     isHidden = not isHidden
