@@ -615,7 +615,7 @@ local ToggleBtn = Instance.new("ImageButton")
 ToggleBtn.Size = UDim2.new(0, 45, 0, 45)
 ToggleBtn.Position = UDim2.new(0, 15, 0, 100)
 ToggleBtn.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-ToggleBtn.Image = "rbxassetid://12560151058"
+ToggleBtn.Image = "rbxassetid://8834748103"
 ToggleBtn.ScaleType = Enum.ScaleType.Crop
 ToggleBtn.Parent = Orion
 
@@ -636,10 +636,10 @@ MainWindow.Visible = false
 ToggleBtn.MouseButton1Click:Connect(function()
     isHidden = not isHidden
     if isHidden then
-        ToggleBtn.Image = "rbxassetid://12560151058"  -- icon đóng
+        ToggleBtn.Image = "rbxassetid://8834748103"  -- icon đóng
         MainWindow.Visible = false
     else
-        ToggleBtn.Image = "rbxassetid://83946367689375"  -- icon mở (cũng icon đó luôn)
+        ToggleBtn.Image = "rbxassetid://8834748103"  -- icon mở (cũng icon đó luôn)
         MainWindow.Visible = true
     end
 end)
