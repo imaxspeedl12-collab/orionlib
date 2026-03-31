@@ -610,6 +610,16 @@ function OrionLib:MakeWindow(WindowConfig)
 		WindowStuff
 	}), "Main")
 
+
+-- 👈 THÊM ĐOẠN NÀY VÀO NGAY SAU DÒNG TRÊN
+-- TỰ ĐỘNG THU GỌN MENU NGAY SAU KHI TẠO
+task.spawn(function()
+    task.wait(0.1)
+    if MinimizeBtn then
+        MinimizeBtn:Activate()
+    end
+end)
+
 	if WindowConfig.ShowIcon then
 		WindowName.Position = UDim2.new(0, 50, 0, -24)
 		local WindowIcon = SetProps(MakeElement("Image", WindowConfig.Icon), {
