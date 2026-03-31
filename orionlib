@@ -610,13 +610,13 @@ function OrionLib:MakeWindow(WindowConfig)
 		WindowStuff
 	}), "Main")
 
--- NÚT TOGGLE MẮT (áp dụng cho Orion)
+-- NÚT TOGGLE DÙNG ICON ID 8834748103
 local ToggleBtn = Instance.new("ImageButton")
 ToggleBtn.Size = UDim2.new(0, 45, 0, 45)
 ToggleBtn.Position = UDim2.new(0, 15, 0, 100)
 ToggleBtn.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-ToggleBtn.Image = "rbxassetid://7072720870"
-ToggleBtn.ScaleType = Enum.ScaleType.Fit
+ToggleBtn.Image = "rbxassetid://8834748103"
+ToggleBtn.ScaleType = Enum.ScaleType.Crop
 ToggleBtn.Parent = Orion
 
 -- Bo tròn
@@ -630,23 +630,19 @@ stroke.Color = Color3.fromRGB(60, 60, 60)
 stroke.Thickness = 1.5
 stroke.Parent = ToggleBtn
 
--- Xử lý toggle
 local isHidden = true
+MainWindow.Visible = false
 
 ToggleBtn.MouseButton1Click:Connect(function()
     isHidden = not isHidden
     if isHidden then
-        ToggleBtn.Image = "rbxassetid://7072720870"
+        ToggleBtn.Image = "rbxassetid://8834748103"  -- icon đóng
         MainWindow.Visible = false
     else
-        ToggleBtn.Image = "rbxassetid://7072719338"
+        ToggleBtn.Image = "rbxassetid://8834748103"  -- icon mở (cũng icon đó luôn)
         MainWindow.Visible = true
     end
 end)
-
--- Mặc định menu ẩn
-MainWindow.Visible = false
-
 -- 👈 THÊM ĐOẠN NÀY VÀO NGAY SAU DÒNG TRÊN
 -- TỰ ĐỘNG THU GỌN MENU NGAY SAU KHI TẠO
 task.spawn(function()
