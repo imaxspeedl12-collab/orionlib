@@ -1919,4 +1919,3 @@ MainWindow.Visible = not HideOnStart
 
 return OrionLib
 
-return OrionLib
